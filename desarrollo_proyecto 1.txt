@@ -1,0 +1,121 @@
+
+1. Algoritmo Inversion
+    {
+   Definir in, tasa , ms como Real;
+   Definir a como Entero;
+ 
+   (tasa = 0.06; // Tasa de interés anual del 6%)
+a=349;// cantidad de años que transcurrio
+ 
+    Imprimir "Ingrese el monto de la inversión inicial (en dólares): ";
+    Leer (in);
+           ms=(ci*ts*a+ci );
+    
+    Imprimir "El valor de la inversión en el año 1976 sería de $", ms ;
+
+
+2. Algoritmo Fibonacci
+{
+Entero x,n;
+Real a,b,c;
+a=0
+b=1
+x = 1
+Imprimir ("ingresé la cantidad de términos que quiere saber");
+Leer (n);
+Mientras (x <= n) Hacer
+{
+c = a+b;
+a = b;
+b = c;
+x = x+1;
+}//Fin mientras 
+}//Fin para 
+}//Fin Algoritmo
+
+
+3. Algoritmo Mayor_menor
+Entero ,a,b,x;
+x = 1;
+Mientras (x<=10) Hacer
+Imprimir ("ingrese un numero");
+Leer (n);
+Si (x == 1) Entonces{
+a = n;
+b = n;
+}
+Si (n >a)Entonces{
+a = n;
+}
+Si (n < b) Entonces{
+b = n;
+}
+}//Fin Algoritmo
+	
+
+
+4. Algoritmo Determinarganadorppt
+ 
+  Definir resultados como Matriz de Entero
+  Entero ganadorRondas
+  Entero ganadorTotal  
+  Entero ronda 
+ 
+  resultados <- [[0, 2, 1],
+                 [1, 0, 3],
+                 [2, 3, 0]]
+ 
+  ganadorRondas <- [0, 0, 0]
+  ganadorTotal <- [0, 0, 0]
+ 
+  ronda <- 1
+  Mientras ronda <= 3 Hacer
+    Escribir "Ronda ", ronda, ":"
+ 
+    // Solicitar la elección de cada jugador
+    Escribir "Jugador 1, elige piedra, papel o tijera: "
+    leer eleccionJugador1
+    Escribir "Jugador 2, elige piedra, papel o tijera: "
+    leer eleccionJugador2
+    Escribir "Jugador 3, elige piedra, papel o tijera: "
+    leer eleccionJugador3
+ 
+    // Verificar las elecciones y determinar el ganador de la ronda
+    elecciones <- [eleccionJugador1, eleccionJugador2, eleccionJugador3]
+    ganadoresRonda <- []
+ 
+    Para i <- 0 Hasta 2 Con Paso 1 Hacer
+      ganadorRonda <- resultados[obtenerIndice(elecciones[i])][obtenerIndice(elecciones[(i+1)%3])]
+      ganadoresRonda.Agregar(ganadorRonda)
+    FinPara
+ 
+    Escribir "Ganadores de la ronda ", ronda, ": ", ganadoresRonda
+ 
+    // Actualizar los puntajes de los jugadores
+    Para i <- 0 Hasta 2 Con Paso 1 Hacer
+      Si ganadoresRonda[i] <> 0 Entonces
+        ganadorRondas[i] <- ganadorRondas[i] + 1
+      FinSi
+    FinPara
+ 
+    // Mostrar los puntajes de la ronda actual
+    Escribir "Puntajes de la ronda ", ronda, ": Jugador 1 = ", ganadorRondas[0], ", Jugador 2 = ", ganadorRondas[1], ", Jugador 3 = ", ganadorRondas[2]
+ 
+    ronda <- ronda + 1
+  FinMientras
+ 
+  // Determinar el ganador total
+  maxPuntaje <- mayorValor(ganadorRondas)
+  ganadoresTotales <- []
+ 
+  Para i <- 0 Hasta 2 Con Paso 1 Hacer
+    Si ganadorRondas[i] = maxPuntaje Entonces
+      ganadoresTotales.Agregar(i+1)
+    FinSi
+  FinPara
+ 
+  Escribir ""
+  Escribir "Resultado final:"
+  Escribir "Puntajes totales: Jugador 1 = ", ganadorRondas[0], ", Jugador 2 = ",   ganadorRondas[1], ", Jugador 3 = ", ganadorRondas[2]
+ 
+  Si Longitud(ganadoresTotales) = 1 Entonces
